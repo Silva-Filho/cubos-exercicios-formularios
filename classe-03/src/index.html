@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+
+        <title>Exercício 03 da aula 12 de Front-end.</title>
+            
+        <link rel = "stylesheet" href = "style.css" />
+
+        <script src = "script.js" defer ></script>
+        <!-- <script type = "module" src="script.js" defer></script> -->
+    </head>
+    <body>
+        <form action = "https://duckduckgo.com/" method = "GET" target = "_blank">
+            <h1>Recomendação de música</h1>
+
+            <label for = "genero-musical"> Escolha um gênero musical: </label>
+            <select name = "genero-musical" id = "genero-musical" required>
+                <option value = "" select>Selecionar</option>
+                <option value = "rock">Rock</option>
+                <option value = "reggae">Reggae</option>
+                <option value = "mpb">MPB</option>
+                <option value = "samba">Samba</option>
+                <option value = "rap">Rap</option>
+            </select>
+
+            <input class = "escondido" type = "text" name = "q" id = "musica" readonly/>
+
+            <button type = "submit">Pesquisar</button>
+        </form>
+    </body>
+</html>
