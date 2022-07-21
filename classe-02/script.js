@@ -1,21 +1,32 @@
 const senha = document.querySelector("#senha");
-/* console.log(senha); */
 const senhaParaConfirmar = document.querySelector("#confirmar-senha");
-/* console.log(senhaParaConfirmar); */
-const messagemSenha = document.querySelector(".form-info span");
-/* console.log(messagemSenha); */
+const messagemSenha = document.querySelector(".form-info .password");
 const celular = document.querySelector("#celular");
-console.log(celular);
-/* Usar RegEx. */
-// Verifica se a string contém apenas números:
-const er = /^[0-9]*$/gm;
+const messagemCelular = document.querySelector(".form-info .mobile");
 
-const confirmarSenha = () => {
-    /* if (senha.value && senhaParaConfirmar.value && ) {} */
-    if (senha.value !== senhaParaConfirmar.value) {
-        messagemSenha.classList.remove("escondido");
-        messagemSenha.innerHTML = "A senha a confirmar diferente do campo senha.";
+const validarCelular = () => {
+    const er = /\([0-9]{2}\) [9]{1} [0-9]{4}-[0-9]{4}/;
+    const ehCelularValido = er.test(celular?.value);
+
+    if (!ehCelularValido) {
+        messagemCelular?.classList.remove("escondido");
+        messagemCelular.innerHTML = "O formato correto é: (xx) 9 xxxx-xxxx";
+    } else {
+        messagemCelular?.classList.add("escondido");
+        messagemCelular.innerHTML = "";
     }
 };
 
-senhaParaConfirmar.addEventListener("change", confirmarSenha);
+celular?.addEventListener("change", validarCelular);
+
+const confirmarSenha = () => {
+    if (senha.value !== senhaParaConfirmar.value) {
+        messagemSenha.classList.remove("escondido");
+        messagemSenha.innerHTML = "A senha a confirmar diferente do campo senha.";
+    } else {
+        messagemSenha.classList.add("escondido");
+        messagemSenha.innerHTML = "";
+    }
+};
+
+senhaParaConfirmar?.addEventListener("change", confirmarSenha);
