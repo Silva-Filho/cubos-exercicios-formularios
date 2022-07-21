@@ -4,38 +4,58 @@
     box-sizing: border-box;
 }
 
+:focus {
+    outline: none;
+}
+
 body {
-    margin: 200px auto;
-    width: 720px;
+    min-width: 100vw;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #eee;
 }
 
 form {
-    width: 400px;
-    padding: 1rem;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid #999;
+    gap: 1.2rem;
+    background-color: #cecdcd;
+    border-radius: 12px;
 }
-
-form h1 {
-    margin-bottom: 1rem;
-}
-
 form label {
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
-form select {
-    margin-bottom: 1rem;
+form select, input {
+    padding: 0.65rem;
+    background-color: #eee;
+    border: none;
+    border-radius: 8px;
 }
 
 form input {
-    margin-bottom: 1rem;
+    width: 100%;
+}
+
+form button {
+    all: unset;
+    margin-top: 1rem;
+    align-self: center;
+    padding: 0.5rem 1rem;
+    color: #F2F2F2;
+    background-color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+form button:hover {
+    background-color: #777;
 }
 
 .escondido {
