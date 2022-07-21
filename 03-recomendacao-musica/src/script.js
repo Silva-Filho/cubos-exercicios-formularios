@@ -1,12 +1,3 @@
-/* const {
-    rock,
-    reggae,
-    mbp,
-    samba,
-    rap
-} = require("./data/musicas"); */
-/* console.log(rock); */
-
 const rock = [
     "Planet Hemp - Mantenha o Respeito",
     "Pedro Luís - Menina do Salão de beleza",
@@ -53,9 +44,7 @@ const rap = [
 ];
 
 const generoMusical = document.querySelector("#genero-musical");
-/* console.log(generoMusical); */
 const inputMusica = document.querySelector("#musica");
-/* console.log(musica); */
 
 const obterIndiceAleatorio = (min, max) => {
     const num = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -63,7 +52,7 @@ const obterIndiceAleatorio = (min, max) => {
 }
 
 const mostrarMusica = (musica) => {
-    inputMusica.classList.remove("escondido");
+    inputMusica?.classList.remove("escondido");
     inputMusica.value = musica;
 };
 
@@ -77,17 +66,13 @@ const obterMusica = (vetor) => {
 };
 
 const limparInput = () => {
-    if (!generoMusical.value) {
-        inputMusica.classList.add("escondido");
+    if (!generoMusical?.value) {
+        inputMusica?.classList.add("escondido");
     }
 };
 
 const obterGeneroMusical = () => {
-    /* event.preventDefault(); */
-    /* console.log(generoMusical.value); */
-    const genero = generoMusical.value;
-    /* console.log(genero); */
-    /* console.log(typeof genero); */
+    const genero = generoMusical?.value;
 
     switch (genero) {
         case "rock":
@@ -111,9 +96,4 @@ const obterGeneroMusical = () => {
     }
 };
 
-generoMusical.addEventListener("change", obterGeneroMusical);
-
-/*  */
-
-/* "module": "commonjs", */
-/* "type": "module" */
+generoMusical?.addEventListener("change", obterGeneroMusical);
